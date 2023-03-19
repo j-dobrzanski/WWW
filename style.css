@@ -6,6 +6,7 @@
     --nav-footer-color-hover:rgb(0, 72, 0);
     --header-color:chocolate;
     --letters-color:darkblue;
+    --code-color:black;
 }
 
 header {
@@ -85,6 +86,15 @@ footer > div > img:visited{
 @media screen and (min-width: 768px){
     footer > div > a {
         display: inline !important;
+        cursor: pointer;
+    }
+
+    footer > div > img {
+        cursor: pointer;
+    }
+
+    nav > div > a {
+        cursor: pointer;
     }
 }
 
@@ -156,8 +166,55 @@ main > h2 {
     display: grid;
 }
 
+.project-container > h1 {
+    text-align: center;
+    color: var(--letters-color);
+}
+
+.project-container > section > h2 {
+    text-align: center;
+    color: var(--letters-color);
+}
+
+.project-container > section > p {
+    color: var(--letters-color);
+}
+
+.project-container > section > p > a {
+    text-decoration: underline;
+}
+
+.project-container > section > p > a:visited {
+    text-decoration: underline;
+    color: var(--letters-color)
+}
+
 /* Hobbies styling */
 
 .hobbies-container {
     display: grid;  
+}
+
+.hobbies-container > h1 {
+    text-align: center;
+    color: var(--letters-color);
+}
+
+.hobbies-container > section > h2 {
+    text-align: center;
+    color: var(--letters-color);
+}
+
+.hobbies-container > section > p {
+    text-align: center;
+    color: var(--letters-color);
+}
+
+.photos-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.photos-container > img {
+    border-radius: 15px;;
 }

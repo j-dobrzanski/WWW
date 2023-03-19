@@ -13,7 +13,7 @@
         <div><a href=projects.html>Projects</a></div>
         <div><a href=hobbies.html>Hobbies</a></div>
     </nav>
-    <body class="background">
+    <body class="background project-container">
         <h1>
             My Latest Projects
         </h1>
@@ -29,21 +29,21 @@
                 <pre>
                     <code>
 def getComment(self) -> str:
-str = " ["
-if self.jumpTo != "":
-    str += f"jumpTo: {self.jumpTo} "
-if self.jumpFrom != [""]:
-    str += f"jumpFrom: "
-    for i in range(0,len(self.jumpFrom)):
-        str += f"{self.jumpFrom[i]} "
-if self.offset != [0]:
-    str += f"offset: "
-    for i in self.offset:
-        str += f"{self.offset[i]} "
-if self.label != "":
-    str += f"label: {self.label} "
-str += "]"
-return str
+    str = " ["
+    if self.jumpTo != "":
+        str += f"jumpTo: {self.jumpTo} "
+    if self.jumpFrom != [""]:
+        str += f"jumpFrom: "
+        for i in range(0,len(self.jumpFrom)):
+            str += f"{self.jumpFrom[i]} "
+    if self.offset != [0]:
+        str += f"offset: "
+        for i in self.offset:
+            str += f"{self.offset[i]} "
+    if self.label != "":
+        str += f"label: {self.label} "
+    str += "]"
+    return str
                     </code>
                 </pre>
             </p>
@@ -88,7 +88,20 @@ int main(void){
     ready_data_destroy(ready_data);
 
     return 0;
-                    }
+}
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h2>
+                Some third project
+            </h2>
+            <p>
+                description of third project
+            </p>
+            <pre>
+                <code>
+Some code
                 </code>
             </pre>
         </section>
