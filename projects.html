@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>  
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <title>DobrzanCode</title>        
+        <meta charset="UTF-8">
+    </head>
+    <header>
+        Welcome To My Webpage!
+    </header>
+    <nav>   
+        <div><a href=front_page.html>Start</a></div>
+        <div><a href=projects.html>Projects</a></div>
+        <div><a href=hobbies.html>Hobbies</a></div>
+    </nav>
+    <body class="background">
+        <h1>
+            My Latest Projects
+        </h1>
+        <section>
+            <h2>
+                Compiler
+            </h2>
+            <p>
+                Program made for university class of <a href="https://cs.pwr.edu.pl/gebala/dyd/jftt2022.html">Formal Languages and Translation Techniques</a>.
+                It is a compiler of a simple language with procedures to a RAM-machine-like assembler (on virtual machine).
+                Entirely made in Python3 using PLY package.
+                Sample of code generating ASM comments for future jump-backs:
+                <pre>
+                    <code>
+def getComment(self) -> str:
+str = " ["
+if self.jumpTo != "":
+    str += f"jumpTo: {self.jumpTo} "
+if self.jumpFrom != [""]:
+    str += f"jumpFrom: "
+    for i in range(0,len(self.jumpFrom)):
+        str += f"{self.jumpFrom[i]} "
+if self.offset != [0]:
+    str += f"offset: "
+    for i in self.offset:
+        str += f"{self.offset[i]} "
+if self.label != "":
+    str += f"label: {self.label} "
+str += "]"
+return str
+                    </code>
+                </pre>
+            </p>
+        </section>
+        <section>
+            <h2>
+                CPU-usage tracker
+            </h2>
+            <p>
+                Program written completely in C language to track current usage 
+                of CPU on Linux system - simple top-like program. 
+                Made as a recruitment task for my first job. 
+                It uses UNIX multithreading API for distributing each of simple tasks to different tasks: 
+                CPU data collection, analyzing collected data and displaying those values in terminal.
+                Code sample of main function:
+            </p>
+            <pre>
+                <code>
+int main(void){
+
+    /* Part resposible for signal handling */
+    struct sigaction action;
+    memset(&action, 0, sizeof(struct sigaction));
+    action.sa_handler = term; /* There is recursive macro disabled by clang */
+    sigaction(SIGTERM, &action, NULL);
+
+    /* Main part that creates data structures and manages threads */
+    Raw_data* raw_data = raw_data_create();
+    Ready_data* ready_data = ready_data_create();
+
+    pthread_t thread_reader, thread_analyzer, thread_printer;
+    pthread_create(&thread_reader, NULL, reader, (void*)&raw_data);
+    pthread_create(&thread_analyzer, NULL, analyzer, 
+        (void*)&(Data_manager){.ready_data = ready_data, .raw_data = raw_data});
+    pthread_create(&thread_printer, NULL, printer, (void*)&ready_data);
+
+    pthread_join(thread_reader, NULL);
+    pthread_join(thread_analyzer, NULL);
+    pthread_join(thread_printer, NULL);
+
+    raw_data_destroy(raw_data);
+    ready_data_destroy(ready_data);
+
+    return 0;
+                    }
+                </code>
+            </pre>
+        </section>
+    </body>
+    <footer>
+        <div><img src="gmail.png" href="mailto:j.s.dobrzanski@gmail.com"><a href="mailto:j.s.dobrzanski@gmail.com">j.s.dobrzanski@gmail.com</a></div>
+        <div><img src="github.png" href="https://github.com/j-dobrzanski"><a href="https://github.com/j-dobrzanski">j-dobrzanski</a></div>
+    </footer>
+</html>

@@ -1,0 +1,163 @@
+/* Main part of styles - styling whole page layout */
+
+:root {
+    --background-color:lightgreen;
+    --nav-footer-color:green;
+    --nav-footer-color-hover:rgb(0, 72, 0);
+    --header-color:chocolate;
+    --letters-color:darkblue;
+}
+
+header {
+    font-size: 20px;
+    background-color:var(--header-color);
+    text-align: center; 
+    color: var(--letters-color);
+    border-radius: 20px;
+    /* Tutaj dodać zdjęcie na background, jakieś zielone ładne */
+    /* background-image: url(...); */
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    display: grid; /* grid used here */
+    grid-template-columns: auto auto auto;
+    width: 100%;
+    column-gap: 0;
+    background-color: var(--nav-footer-color);
+    border-radius: 20px;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    overflow: hidden;
+    display: grid; /* grid used here */
+    grid-template-columns: auto auto;
+    width: 100%;
+    column-gap: 0;
+    background-color: var(--nav-footer-color);
+    border-radius: 20px;
+}
+
+footer > div, nav > div {
+    /* line-height: 100%; */
+    text-align: center;
+    vertical-align: middle;
+    background-size: contain;
+    color: var(--letters-color);
+    width: auto;
+}
+
+nav > div > a {
+    color: var(--letters-color);
+    text-decoration: none;
+}
+
+footer > div > a {
+    display: none;
+    color: var(--letters-color);
+    text-decoration: none;
+}
+
+footer > div > a:visited, nav > div > a:visited {
+    display: none;
+    text-decoration: none;
+    color: var(--letters-color);
+}
+
+footer > div:hover, nav > div:hover {
+    background-color: var(--nav-footer-color-hover);
+}
+
+footer > div > img{
+    max-height: 15px;
+    max-width: 15px;
+}
+
+footer > div > img:visited{
+    text-decoration: none;
+    color: var(--letters-color);
+}
+
+@media screen and (min-width: 768px){
+    footer > div > a {
+        display: inline !important;
+    }
+}
+
+.background {
+    background-color: var(--background-color);
+}
+
+/* nav.nav_container > ul {  Apparently flexbox/grid doesn't like lists - all items are put inside one box
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav.nav_container > ul > li {
+    display: inline;
+} */
+
+
+/* Front page styling */
+main {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.main-photo {
+    display: none;
+}
+
+.main-title { 
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: 30px;
+    color: var(--letters-color);
+}    
+
+main > p {
+    grid-column-start: 1;
+    grid-column-end:  3;
+    color: var(--letters-color);
+}
+
+main > h2 {
+    grid-column-start: 1;
+    grid-column-end:  3;   
+    color: var(--letters-color);
+}
+
+@media screen and (min-width: 768px){
+    .main-photo {
+        grid-column-start: 1;
+        grid-column-end: 1;
+        border-radius: 10%;
+        max-width: 100%;
+        height: auto;
+        display: inline !important;
+    }
+
+    .main-title { 
+        grid-column-start: 2;
+        grid-column-end: 3;
+        color: var(--letters-color);
+    }    
+}
+
+/* Projects styling */
+
+.project-container {
+    display: grid;
+}
+
+/* Hobbies styling */
+
+.hobbies-container {
+    display: grid;  
+}
