@@ -93,6 +93,22 @@ footer > div > img:visited{
         cursor: pointer;
     }
 
+    nav {
+        height: 100%;
+        width: 10vw;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        padding-top: 20px;
+        grid-template-columns: auto;
+    }
+
+    body {
+        margin-left: 10vw;
+    }
+
     nav > div > a {
         cursor: pointer;
     }
@@ -143,12 +159,12 @@ main > h2 {
     color: var(--letters-color);
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 600px){
     .main-photo {
         grid-column-start: 1;
         grid-column-end: 1;
         border-radius: 10%;
-        max-width: 100%;
+        width: 20vw;
         height: auto;
         display: inline !important;
     }
@@ -205,7 +221,7 @@ main > h2 {
     color: var(--letters-color);
 }
 
-.hobbies-container > section > p {
+.hobbies-container > section > article {
     text-align: center;
     color: var(--letters-color);
 }
@@ -213,8 +229,12 @@ main > h2 {
 .photos-container {
     display: grid;
     grid-template-columns: auto auto auto;
+    padding: 5%;
+    padding-bottom: 10%;
+    gap: 5%;
 }
 
 .photos-container > img {
-    border-radius: 15px;;
+    border-radius: 15px;
+    width: 100%;
 }
