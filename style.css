@@ -22,10 +22,10 @@ header {
 nav {
     position: sticky;
     top: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: grid; /* grid used here */
     grid-template-columns: auto auto auto;
-    width: 100%;
+    width: auto;
     column-gap: 0;
     background-color: var(--nav-footer-color);
     border-radius: 20px;
