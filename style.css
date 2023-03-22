@@ -37,7 +37,7 @@ footer {
     overflow: hidden;
     display: grid; /* grid used here */
     grid-template-columns: auto auto;
-    width: 100%;
+    width: auto;
     column-gap: 0;
     background-color: var(--nav-footer-color);
     border-radius: 20px;
@@ -151,9 +151,11 @@ main > p {
     grid-column-start: 1;
     grid-column-end:  3;
     color: var(--letters-color);
+    text-align: center;
 }
 
 main > h2 {
+    text-align: center;
     grid-column-start: 1;
     grid-column-end:  3;   
     color: var(--letters-color);
@@ -161,12 +163,17 @@ main > h2 {
 
 @media screen and (min-width: 600px){
     .main-photo {
+        padding: 5%;
         grid-column-start: 1;
         grid-column-end: 1;
         border-radius: 10%;
         width: 20vw;
         height: auto;
         display: inline !important;
+        border-color: black;
+        border-style: solid;
+        border-width: 1px;
+        margin: 5%;
     }
 
     .main-title { 
@@ -179,7 +186,8 @@ main > h2 {
 /* Projects styling */
 
 .project-container {
-    display: grid;
+    /* display: grid; */
+    color: black;
 }
 
 .project-container > h1 {
@@ -192,7 +200,9 @@ main > h2 {
     color: var(--letters-color);
 }
 
-.project-container > section > p {
+.project-container > section > p{
+    margin: 5%;
+    text-align: center;
     color: var(--letters-color);
 }
 
@@ -203,6 +213,10 @@ main > h2 {
 .project-container > section > p > a:visited {
     text-decoration: underline;
     color: var(--letters-color)
+}
+
+.project-container > section > pre{
+    margin: 10%;
 }
 
 /* Hobbies styling */
@@ -222,6 +236,7 @@ main > h2 {
 }
 
 .hobbies-container > section > article {
+    margin: 5%;
     text-align: center;
     color: var(--letters-color);
 }
